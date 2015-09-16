@@ -5,8 +5,8 @@ Checklist
 
 Checklist is a command-line tool for managing--you guessed it--checklists.
 
-**Note: this is a preliminary spec, and this software doesn't actually work
-yet.**
+**Note: this is a preliminary spec, and this software only barely works.
+Maybe.**
 
 Overview
 --------
