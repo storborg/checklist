@@ -53,39 +53,44 @@ Then you can apply it in a project.::
     [3] android-app
     >>> 1
 
-    Using pcb-design checklist. Let's go!
-    -------------------------------------------
+    Using pcb-design checklist. Let's go.
+    ----------------------------------------
     Include test points, especially on critical traces from small-pitch
-    components. [Y/n]
+    components.
     -- Never checked.
-    >>> Y
-    -------------------------------------------
+    [Y/n] Y
+    ----------------------------------------
     When extra IO and space is available, include one or more LEDs that is
     directly controlled by a dedicated MCU pin. [Y/n]
     -- Never checked.
-    >>> ^C
+    [Y/n] ^C
 
 You can quit anytime you want. You can see that a file called
 ``checklist.json`` has been created in the local directory. It records when you
 run checklist, and when you check things off. Next time you run it::
 
     $ checklist check
-    Using pcb-design checklist. Let's go!
-    -------------------------------------------
+    Using pcb-design checklist. Let's go.
+    ----------------------------------------
     When extra IO and space is available, include one or more LEDs that is
     directly controlled by a dedicated MCU pin. [Y/n]
     -- Never checked.
-    >>> ^C
+    [Y/n] ^C
 
 If you've changed files since a check-off, you'll be prompted to recheck it.::
 
     $ checklist check
-    Using pcb-design checklist. Let's go!
-    -------------------------------------------
+    Using pcb-design checklist. Let's go.
+    ----------------------------------------
     Include test points, especially on critical traces from small-pitch
     components. [Y/n]
     -- Last checked on 2015-09-13 by scott.
-    >>> Y
+    [Y/n] Y
+
+When you're done, you'll get::
+
+    ...
+    Checklist is complete!
 
 You'll probably want a way to make sure that you actually follow the checklist.
 You can use the included ``checklist verify`` command inside a Makefile, a
