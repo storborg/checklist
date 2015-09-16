@@ -3,7 +3,9 @@ import argparse
 
 from datetime import datetime
 
-from . import __version__, model, compat
+import six
+
+from . import __version__, model
 from .parse import ChecklistParser
 
 
@@ -26,7 +28,7 @@ def pick_checklist(registry):
     while True:
         for ii, checklist_name in enumerate(checklist_names):
             print("[%d] %s" % (ii, checklist_name))
-        index = compat.input('>>> ')
+        index = six.input('>>> ')
         try:
             return checklist_names[int(index)]
         except (IndexError, TypeError, ValueError):
@@ -43,7 +45,7 @@ def new_project(registry):
 
 def input_yesno(prompt='[Y/n] '):
     while True:
-        resp = compat.input('[Y/n] ').strip().lower()
+        resp = six.input('[Y/n] ').strip().lower()
         if (resp == '') or resp.startswith('y'):
             return True
         elif resp.startswith('n'):
